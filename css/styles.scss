@@ -1,6 +1,63 @@
 $body-color: black;
+$max-width: 1600px;
+$page-margin: 600px;
+
+html, 
+body {
+    height: 100%;
+}
 
 body {
   color: $body-color;
-  background-image: url('../../src/assets/images/restaurant_bg.jpg');
+  background: url('../../src/assets/images/restaurant_bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+
+  #navbar{
+    overflow: hidden;
+    background-color: #000000;
+
+    .navbar-inner{
+        text-align: center;
+
+        .nav{
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+
+            a{
+                padding: 20px;
+                display: inline-block;
+                color: #f2f2f2;
+                text-align: center;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                text-decoration: none;
+
+                &:hover, &.active{
+                    color: black;
+                    background: white;
+                }
+            }
+        }
+
+    }
+  }
+
+  .page-wrap{
+    max-width: $max-width;
+    margin-left: $page-margin;
+    margin-right: $page-margin;
+    height: 100%;
+
+    #content{
+        background: white;
+        height: 80%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 2rem;
+    }
+  }
 }
