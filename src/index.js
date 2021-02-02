@@ -1,2 +1,6 @@
 import "../dist/css/styles.scss";
-console.log("OK");
+import helper from "./modules/helpers";
+import loadPage from "./modules/load_page";
+
+
+loadPage();
