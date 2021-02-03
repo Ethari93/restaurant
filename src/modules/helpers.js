@@ -1,3 +1,8 @@
+import loadHome from "./load_home";
+import loadMenu from "./load_menu";
+import loadContact from "./load_contact";
+
+
 const helper = (() => {
     const createElementWithClass = (_element, ..._classes) => {
         const element = document.createElement(_element);
@@ -14,15 +19,33 @@ const helper = (() => {
         element.classList.add("faded-out");
 
         window.setTimeout(() => {
-            console.log("Now");
+            console.log("Fading in...");
             element.classList.remove("faded-out");
         }, 100)
     }
 
+    const clearPage = () => {
+        const container = document.querySelector(".page-wrap");
+        container.textContent = "";
+    }
+
+    const switchPage = (action) => {
+        clearPage();
+        if(action == "contact"){
+            loadContact();
+        } else if(action == "menu"){
+            loadMenu();
+        } else{
+            loadHome();
+        }
+    }
+    
     return {
         createElementWithClass,
-        fadeInElement
+        fadeInElement,
+        clearPage,
+        switchPage
     }
 })();
 
-export {helper};
+export default helper;
