@@ -19,7 +19,6 @@ const helper = (() => {
         element.classList.add("faded-out");
 
         window.setTimeout(() => {
-            console.log("Fading in...");
             element.classList.remove("faded-out");
         }, 100)
     }
@@ -30,6 +29,12 @@ const helper = (() => {
     }
 
     const switchPage = (action) => {
+        const nav = document.querySelector(".nav");
+        const oldActive = nav.querySelector(".active");
+        const newActive = nav.querySelector(`[data-action='${action}'`);
+        oldActive.classList.remove("active");
+        newActive.classList.add("active");
+
         clearPage();
         if(action == "contact"){
             loadContact();

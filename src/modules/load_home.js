@@ -20,6 +20,10 @@ const loadHome = () => {
     const orderBtn = helper.createElementWithClass("div", "btn", "btn-order");
     orderBtn.textContent = copy.orderBtn;
 
+    orderBtn.addEventListener('click', () => {
+        helper.switchPage('menu');
+    });
+
     helper.fadeInElement(content, headline);
     helper.fadeInElement(content, subtitle);
     helper.fadeInElement(content, orderBtn);
